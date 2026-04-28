@@ -1,0 +1,4 @@
+# Ship only the website
+*
+!.gitignore
+!index.html

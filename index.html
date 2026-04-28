@@ -295,24 +295,15 @@
     width: 100%;
     max-width: 760px;
   }
-  .hero__archwrap {
-    width: clamp(220px, 30vw, 360px);
+  .hero__seal {
+    width: clamp(180px, 24vw, 260px);
     margin: 0 0 1rem;
     color: var(--ink);
-    position: relative;
   }
-  .hero__archwrap svg { display: block; width: 100%; height: auto; }
-  .hero__deva-inside {
-    position: absolute;
-    top: 56%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  .hero__seal svg { display: block; width: 100%; height: auto; }
+  .hero__seal text {
     font-family: var(--font-deva);
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    color: var(--ink);
-    line-height: 1;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
+    font-weight: 400;
   }
   .hero__title {
     font-family: var(--font-display);
@@ -903,16 +894,15 @@
   <!-- ════════════════════════════ HERO ════════════════════════════ -->
   <section class="hero" aria-label="Dharma Sanga">
     <div class="hero__inner">
-      <div class="hero__archwrap">
-        <svg viewBox="0 0 240 280" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <!-- Outer pointed arch -->
-          <path d="M30 280 L30 130 Q30 16 120 8 Q210 16 210 130 L210 280" stroke-width="1.2"/>
-          <!-- Inner double-line -->
-          <path d="M50 280 L50 140 Q50 36 120 28 Q190 36 190 140 L190 280" stroke-width="1" opacity="0.45"/>
-          <!-- Threshold floor -->
-          <line x1="0" y1="280" x2="240" y2="280" stroke-width="1" opacity="0.3"/>
+      <div class="hero__seal">
+        <svg viewBox="0 0 240 240" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Dharma seal">
+          <!-- Outer circle, drawn with subtle imperfection for hand-stamped warmth -->
+          <path d="M 120 21 C 175 21 219 66 220 120 C 221 175 175 220 120 220 C 65 221 20 175 20 119 C 20 65 65 19 120 21 Z"/>
+          <!-- Downward-pointing equilateral triangle, inscribed with breathing room -->
+          <path d="M 44 76 L 196 76 L 120 208 Z"/>
+          <!-- Devanagari word धर्म, the visual focus -->
+          <text x="120" y="138" text-anchor="middle" fill="currentColor" stroke="none" font-size="42" lang="sa">धर्म</text>
         </svg>
-        <span class="hero__deva-inside" lang="sa" aria-label="Dharma Sanga in Devanagari">धर्म&nbsp;संग</span>
       </div>
       <h1 class="hero__title">Dharma Sanga</h1>
       <div class="hero__axis" aria-hidden="true"></div>

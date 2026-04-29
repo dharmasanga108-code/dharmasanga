@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#F2EBDD">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   /* ────────────────────────── TOKENS ────────────────────────── */
   :root {
@@ -26,7 +26,6 @@
     --font-display:    'Cormorant Garamond', 'EB Garamond', Georgia, serif;
     --font-body:       'EB Garamond', Georgia, serif;
     --font-label:      'Inter', system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif;
-    --font-deva:       'Tiro Devanagari Sanskrit', 'Tiro Devanagari Hindi', serif;
 
     --text-hero:     clamp(3.5rem, 8vw, 7rem);
     --text-display:  clamp(2.25rem, 4vw, 3.5rem);
@@ -589,7 +588,7 @@
     padding: var(--section-gap) 0 calc(var(--section-gap) * 1.1);
   }
   .close-inner { max-width: 36rem; margin: 0 auto; padding: 0 var(--gutter); }
-  .close-section svg { display: block; margin: 0 auto 2.5rem; width: 88px; height: auto; color: var(--ochre); opacity: 0.85; }
+  .close-section .close-mark { display: block; margin: 0 auto 2.5rem; width: 110px; height: auto; opacity: 0.95; }
   .close-section h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); margin-bottom: 1.5rem; }
   .close-section .invitation-line {
     font-family: var(--font-display);
@@ -775,10 +774,9 @@
   .commitment-arch {
     display: block;
     margin: 0 auto 1.6rem;
-    width: clamp(80px, 10vw, 120px);
+    width: clamp(96px, 12vw, 140px);
     height: auto;
-    color: var(--ochre);
-    opacity: 0.85;
+    opacity: 0.95;
   }
   .commitment__price { font-size: clamp(4rem, 9vw, 6rem); }
 
@@ -798,8 +796,8 @@
     color: var(--ochre);
     opacity: 0.6;
   }
-  .arch-ornament svg { display: block; width: 56px; height: auto; }
-  .arch-ornament--faint { opacity: 0.4; }
+  .arch-ornament img { display: block; width: 64px; height: auto; }
+  .arch-ornament--faint { opacity: 0.55; }
 
   /* Typographic polish — pretty/balance line breaks */
   .prose p { text-wrap: pretty; }
@@ -988,9 +986,7 @@
   </section>
 
   <div class="arch-ornament arch-ornament--faint" aria-hidden="true">
-    <svg viewBox="0 0 120 56" fill="none" stroke="none" aria-hidden="true">
-      <text x="60" y="42" text-anchor="middle" fill="currentColor" font-size="42" font-family="'Tiro Devanagari Sanskrit', 'Tiro Devanagari Hindi', serif">धर्म</text>
-    </svg>
+    <img src="assets/dharma-sanga-mark.png" alt="">
   </div>
 
   <!-- ════════════════════════════ §6 PILLARS — STRUCTURAL CORE ════════════════════════════ -->
@@ -1078,9 +1074,7 @@
   </section>
 
   <div class="arch-ornament arch-ornament--faint" aria-hidden="true">
-    <svg viewBox="0 0 120 56" fill="none" stroke="none" aria-hidden="true">
-      <text x="60" y="42" text-anchor="middle" fill="currentColor" font-size="42" font-family="'Tiro Devanagari Sanskrit', 'Tiro Devanagari Hindi', serif">धर्म</text>
-    </svg>
+    <img src="assets/dharma-sanga-mark.png" alt="">
   </div>
 
   <!-- ════════════════════════════ §7 INCLUSIONS ════════════════════════════ -->
@@ -1122,10 +1116,7 @@
   <!-- ════════════════════════════ §9 COMMITMENT ════════════════════════════ -->
   <section class="commitment" id="commitment">
     <div class="commitment-inner">
-      <svg class="commitment-arch" viewBox="0 0 240 200" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M 30 30 L 210 30 L 120 187 Z"/>
-        <text x="120" y="102" text-anchor="middle" fill="currentColor" stroke="none" font-size="44" font-family="'Tiro Devanagari Sanskrit', 'Tiro Devanagari Hindi', serif">धर्म</text>
-      </svg>
+      <img class="commitment-arch" src="assets/dharma-sanga-mark.png" alt="" aria-hidden="true">
       <p class="label" style="margin-bottom:1rem;">Commitment</p>
       <h2>Your Commitment</h2>
       <p class="commitment__price">$108<span>/month</span></p>
@@ -1183,10 +1174,7 @@
   <!-- ════════════════════════════ §12 BEGIN ════════════════════════════ -->
   <section class="close-section" id="begin">
     <div class="close-inner">
-      <svg viewBox="0 0 240 200" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M 30 30 L 210 30 L 120 187 Z"/>
-        <text x="120" y="102" text-anchor="middle" fill="currentColor" stroke="none" font-size="44" font-family="'Tiro Devanagari Sanskrit', 'Tiro Devanagari Hindi', serif">धर्म</text>
-      </svg>
+      <img class="close-mark" src="assets/dharma-sanga-mark.png" alt="" aria-hidden="true">
       <p class="label">An Invitation</p>
       <h2 class="display">If this speaks to you, you already know.</h2>
       <p class="invitation-line"><em>The only question is whether you act on it.</em></p>

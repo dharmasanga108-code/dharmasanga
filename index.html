@@ -375,11 +375,14 @@
   .definition__split {
     grid-column: 2 / 12;
     display: grid;
-    grid-template-columns: 5fr 6fr;
+    grid-template-columns: 1fr;
     column-gap: 4rem;
+    justify-self: center;
+    max-width: 58rem;
+    width: 100%;
   }
   @media (max-width: 860px) {
-    .definition__split { grid-column: 1 / 13; grid-template-columns: 1fr; row-gap: 2rem; }
+    .definition__split { grid-column: 1 / 13; grid-template-columns: 1fr; row-gap: 2rem; max-width: none; }
   }
   .definition__split h2 {
     font-size: clamp(1.8rem, 3.2vw, 2.6rem);
@@ -409,16 +412,17 @@
   }
   .pillars-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     border-top: 1px solid var(--hairline);
     border-left: 1px solid var(--hairline);
-    max-width: var(--max-content);
+    max-width: 58rem;
+    width: 100%;
     margin: 0 auto;
     position: relative;
     z-index: 1;
   }
   @media (max-width: 860px) {
-    .pillars-grid { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; max-width: none; }
   }
   .pillar {
     padding: 3.5rem 2.5rem;
@@ -455,6 +459,15 @@
     color: var(--ink);
   }
   .pillar__intro { color: var(--ink-soft); margin-bottom: 0.4rem; }
+  .pillar__subheading {
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin: 2.2rem 0 0.6rem;
+  }
   .pillar__close {
     margin-top: auto;
     padding-top: 1.5rem;
@@ -598,6 +611,18 @@
     margin: 0 0 3rem;
   }
   .close-section .invitation-line em { font-style: italic; color: var(--ochre); }
+  .close-section .offer-note {
+    margin: 1.2rem 0 0.6rem;
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 30rem;
+  }
+  .close-section .offer-note em {
+    color: var(--ochre);
+    font-style: normal;
+    font-weight: 600;
+  }
   .cta {
     display: inline-block;
     font-family: var(--font-display);
@@ -611,6 +636,16 @@
     margin-bottom: 3rem;
   }
   .cta:hover { color: var(--ochre); border-bottom-color: var(--ochre); }
+  .shift-note {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--ink);
+    border: none;
+    padding: 0.4rem 0.3rem 0.55rem;
+    margin-bottom: 3rem;
+  }
   .contact {
     color: var(--ink-soft);
     font-size: 0.98rem;
@@ -720,6 +755,7 @@
     font-family: var(--font-body);
     font-size: 1rem;
     color: var(--ink-soft);
+    margin-top: 1.4rem;
     margin-bottom: 1.25rem;
   }
 
@@ -748,15 +784,16 @@
     line-height: 1.5;
   }
 
-  /* Inner-only borders on the 2×2 grid (no outer frame) */
+  /* Inner-only borders on the single-column layout */
   .pillars-grid {
     border-top: none;
     border-left: none;
     padding-inline: clamp(1.5rem, 4vw, 4rem);
   }
-  .pillar { border-right: none; border-bottom: none; }
+  .pillar { border-right: none; border-bottom: 1px solid var(--hairline); }
+  .pillar:last-child { border-bottom: none; }
   .pillar:nth-child(1),
-  .pillar:nth-child(3) { border-right: 1px solid var(--hairline); }
+  .pillar:nth-child(3) { border-right: none; }
   .pillar:nth-child(1),
   .pillar:nth-child(2) { border-bottom: 1px solid var(--hairline); }
 
@@ -871,23 +908,25 @@
 
         <div class="prose">
           <p>Followed the path. Played the roles. Chased what was meant to make you happy.</p>
-          <p>But something doesn’t sit right.</p>
-          <p>Not obviously broken. Just… incomplete.</p>
+          <p>But underneath it all, there’s a quiet ache, a sense that you’re meant for something deeper.</p>
           <p>You feel it in quiet moments.<br>
             A sense that life is meant to be deeper than this.<br>
             More focused. More meaningful. More real.</p>
           <p>Small talk drains you.<br>
-            Distraction feels empty.<br>
-            Success without purpose doesn’t satisfy.</p>
+            Mindless pleasure bores you.<br>
+            Success without meaning feels empty.<br>
+            Comfort without purpose feels like decay.</p>
+          <p>You’re tired of pretending that the ordinary life is enough.<br>
+            You’re tired of shrinking your inner calling to fit into a world that doesn’t value depth.<br>
+            You’re tired of carrying questions no one around you is asking.</p>
         </div>
 
         <p class="truth-pull">
-          You’re not looking for more noise.<br>
           You’re looking for <em>truth, clarity, and direction.</em>
         </p>
 
         <div class="prose" style="margin-top:1.5rem;">
-          <p>And you want to walk that path with people who get it.</p>
+          <p>And you want to walk that path with people who understand what it’s like to be awake in a world that’s sleepwalking.</p>
         </div>
       </div>
     </div>
@@ -936,6 +975,7 @@
         </ol>
 
         <p class="closer">You already sense this.</p>
+        <p class="closer">You know there must be something <span class="accent">more intelligent and meaningful behind existence</span>.</p>
       </div>
     </div>
   </section>
@@ -943,7 +983,7 @@
   <!-- ════════════════════════════ §4 DEFINITION ════════════════════════════ -->
   <section class="section definition" id="definition">
     <div class="grid">
-      <div class="definition__split">
+      <div class="editorial">
         <div>
           <p class="label">Definition</p>
           <h2 class="display">Dharma Sanga is not just a community.</h2>
@@ -1016,14 +1056,35 @@
       <article class="pillar">
         <p class="pillar__num">I</p>
         <p class="pillar__label">Knowledge</p>
-        <h3 class="pillar__head">You understand reality properly. Or you stay confused.</h3>
+        <h3 class="pillar__head">Transformation begins with understanding reality properly.</h3>
         <div class="pillar__body">
-          <p class="pillar__intro">We explore:</p>
-          <ul class="phrases">
-            <li>Who you are beyond the body and mind</li>
-            <li>How your psychology actually works</li>
-            <li>The deeper structure of reality — karma, consciousness, nature</li>
-          </ul>
+          <p>When we lack knowledge, we are controlled by circumstances, emotions, and reactions.</p>
+          <h4 class="pillar__subheading">Understanding Yourself</h4>
+          <p>Who are you beyond the body and mind?</p>
+          <p>We explore:</p>
+          <ol class="roman">
+            <li>The psycho-physical nature of your body and mind</li>
+            <li>The deeper spiritual self</li>
+            <li>How understanding your real identity unlocks direction and purpose</li>
+          </ol>
+          <p>When you understand who you are, life becomes aligned rather than confusing.</p>
+          <h4 class="pillar__subheading">Understanding the World</h4>
+          <p>We explore the deeper mechanics of existence, including:</p>
+          <ol class="roman">
+            <li>Karma and the law of action and reaction</li>
+            <li>How to remain undisturbed by life’s ups and downs</li>
+            <li>The three modes of material nature</li>
+          </ol>
+          <p>Understanding these principles allows you to engineer your life in a way that elevates consciousness.</p>
+          <h4 class="pillar__subheading">Understanding Non-Material Reality</h4>
+          <p>We also explore the deeper dimensions of existence:</p>
+          <ol class="roman">
+            <li>What absolute truth means</li>
+            <li>The nature of spiritual reality</li>
+            <li>The relationship between consciousness and the universe</li>
+          </ol>
+          <p>This knowledge opens access to higher levels of happiness beyond material experience.</p>
+          <p>Without this knowledge, even intelligent and well-intentioned people remain confused about how to live.</p>
         </div>
         <p class="pillar__close">When you see clearly, life becomes aligned.</p>
       </article>
@@ -1033,27 +1094,52 @@
         <p class="pillar__label">Daily Practice</p>
         <h3 class="pillar__head">Insight without practice doesn’t transform anything.</h3>
         <div class="pillar__body">
-          <p class="pillar__intro">You build:</p>
-          <ul class="phrases">
-            <li>Meditation and awareness practices</li>
-            <li>Daily reflection</li>
-            <li>Structured philosophical integration</li>
-          </ul>
+          <p>Knowledge alone is not enough.</p>
+          <p>Transformation happens through daily practices that elevate consciousness.</p>
+          <p>Inside Dharma Sanga you learn practices designed to gradually shift your awareness beyond the body and mind.</p>
+          <p class="pillar__intro">These include:</p>
+          <ol class="roman">
+            <li>Meditation practices</li>
+            <li>Conscious reflection</li>
+            <li>Daily philosophical study</li>
+          </ol>
+          <p>These practices allow you to experience that you are not merely the mind or the body — but the deeper conscious self.</p>
+          <p class="pillar__intro">Without practices:</p>
+          <ol class="roman">
+            <li>The mind gradually takes control</li>
+            <li>Temptations and impulses dominate decisions</li>
+            <li>Energy becomes scattered</li>
+            <li>Life gets consumed by temporary distractions</li>
+          </ol>
+          <p>Humans naturally seek progress.</p>
+          <p>When consciousness stagnates, frustration and dissatisfaction appear.</p>
+          <p>Daily practice ensures your consciousness is always evolving upward.</p>
         </div>
         <p class="pillar__close">So your consciousness actually evolves. Not just your ideas.</p>
       </article>
 
       <article class="pillar">
         <p class="pillar__num">III</p>
-        <p class="pillar__label">Lifestyle Design</p>
+        <p class="pillar__label">Lifestyle Engineering</p>
         <h3 class="pillar__head">Your environment shapes your mind.</h3>
         <div class="pillar__body">
-          <p class="pillar__intro">We refine:</p>
-          <ul class="phrases">
-            <li>What you consume — food, content, inputs</li>
-            <li>How you use your time and energy</li>
-            <li>How you structure your daily life</li>
-          </ul>
+          <p>Your lifestyle shapes your consciousness.</p>
+          <p>Inside Dharma Sanga we explore how to design a life that naturally supports higher awareness.</p>
+          <p class="pillar__intro">This includes examining:</p>
+          <ol class="roman">
+            <li>What you eat</li>
+            <li>What information you consume</li>
+            <li>How you interact with the world</li>
+            <li>How you manage your time and energy</li>
+          </ol>
+          <p>The goal is to gradually cultivate a mode of goodness — a state of clarity, balance, and peace of mind.</p>
+          <p class="pillar__intro">A conscious lifestyle means living:</p>
+          <ol class="roman">
+            <li>In harmony with nature</li>
+            <li>In harmony with other living beings</li>
+            <li>In harmony with your own higher self</li>
+          </ol>
+          <p>Without conscious lifestyle design, many people feel trapped in habits and behaviors that do not reflect who they want to become.</p>
         </div>
         <p class="pillar__close">So discipline becomes natural. Not forced.</p>
       </article>
@@ -1063,11 +1149,31 @@
         <p class="pillar__label">Sanga — Association</p>
         <h3 class="pillar__head">You don’t rise in isolation. You rise through association.</h3>
         <div class="pillar__body">
-          <p>Most people try to change while staying in the same environment: same conversations, same distractions, same standards.</p>
-          <p style="margin-top:1rem;">And nothing really shifts.</p>
-          <p style="margin-top:1rem; font-style:italic; color:var(--ink);">Change the environment. Then everything changes.</p>
+          <p>Most people try to change their life while staying in the same environment that's keeping them stuck. The same conversations, the same distractions, the same low standards. And then they wonder why nothing really shifts. When you place yourself around people who are committed to clarity, discipline, and a higher purpose, something changes.</p>
+          
+          <ul class="phrases">
+            <li>Your thinking sharpens.</li>
+            <li>Your standards lift.</li>
+            <li>The things that once felt difficult — focus, consistency, direction — start to feel natural.</li>
+          </ul>
+
+          <p>It's no longer just you relying on willpower. You're in an environment where growth is normal, where drifting isn't the default, and where there's an unspoken expectation to move forward. Distraction loses its pull. Your direction becomes clearer. And you start to become someone who actually follows through.</p>
+
+          <p></p>
+          <p>This is what most people are missing:</p>
+          <p>Not more information, but the <span class="accent">right association</span>.</p>
+
+          <p></p>
+          <p>Because when the environment is right, <span class="accent">growth stops feeling like a constant fight</span>… and starts becoming who you are.</p>
+
+          <p></p>
+          <p class="pillar__intro">Dharma Sanga provides:</p>
+          <ul class="phrases">
+            <li>A community of thoughtful, conscious individuals walking the same path</li>
+            <li>An easy way to live a life of <span class="accent">higher consciousness</span> rather than struggling alone</li>
+          </ul>
         </div>
-        <p class="pillar__close">When the environment is right, growth stops feeling like a fight — and starts becoming who you are.</p>
+        <p class="pillar__close">Where growth becomes natural. Not a constant fight.</p>
       </article>
 
     </div>
@@ -1179,13 +1285,13 @@
       <h2 class="display">If this speaks to you, you already know.</h2>
       <p class="invitation-line"><em>The only question is whether you act on it.</em></p>
 
-      <a class="cta" href="mailto:dharmasanga108@gmail.com?subject=Joining%20Dharma%20Sanga">Begin the shift</a>
+      <p class="shift-note">To begin your shift, message "DHARMA" to Amani on:</p>
 
       <div class="contact">
-        Contact Amani<br>
         <a href="mailto:dharmasanga108@gmail.com">dharmasanga108@gmail.com</a><br>
         <a href="https://wa.me/64275141442" rel="noopener">WhatsApp&nbsp;·&nbsp;+64 27 514 1442</a>
       </div>
+      <p class="offer-note">The first <em>8 members</em> to join receive exclusive 1-on-1 access, priority guidance, and direct support to help you move into Dharma Sanga with clarity and momentum.</p>
     </div>
   </section>
 
